@@ -1,0 +1,27 @@
+{
+  "name": "huilu",
+  "version": "0.7.0",
+  "description": "Generates flamegraphs with Node.js or in the browser",
+  "main": "index.js",
+  "scripts": {
+    "prepublish": "nsp check"
+  },
+  "dependencies": {
+    "concat-stream": "~1.4.6",
+    "cpuprofilify": "^0.2.4",
+    "handlebars": "^4.0.5",
+    "through2": "~0.6.0",
+    "xtend": "~4.0.0"
+  },
+  "devDependencies": {
+    "debounce": "^1.0.0",
+    "hbsfy": "~2.0.0",
+    "nave": "~0.4.3",
+    "nsp": "^2.6.1",
+    "resolve-jit-symbols": "~0.3.4",
+    "stream-array": "~1.0.1",
+    "uniwheel": "^0.1.2",
+    "watchify": "~2.1.1"
+  },
+  "license": "Apache-2.0"
+}
