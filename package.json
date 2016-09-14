@@ -6,8 +6,8 @@
   "scripts": {
     "lint": "eslint test/*.js index.js from-stream.js lib/*.js",
     "prepublish": "nsp check",
-    "test": "tape test/contextify-test.js | tap-spec",
-    "coverage": "istanbul cover tape test/cpugenet-test.js"
+    "test": "tape test/contextify-test.js test/cpuprofile-processor-test.js | tap-spec",
+    "coverage": "istanbul cover tape test/contextify-test.js"
   },
   "dependencies": {
     "concat-stream": "~1.4.6",
