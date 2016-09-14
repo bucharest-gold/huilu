@@ -26,7 +26,7 @@ Generates flamegraphs with Node.js
 ## Usage
 
     const fs = require('fs');
-    const huilu = require('huilu');
+    const huilu = require('huilu/from-stream');
 
     const stream = fs.createReadStream('v8.cpuprofile');
     const svg = fs.createWriteStream('graph.svg');
@@ -35,3 +35,5 @@ Generates flamegraphs with Node.js
 ## Contributing
 
 Please read the [contributing guide](./CONTRIBUTING.md)
+
+> Portions of this software derive from https://github.com/thlorenz/flamegraph.

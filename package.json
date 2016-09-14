@@ -6,9 +6,17 @@
   "scripts": {
     "lint": "eslint test/*.js index.js from-stream.js lib/*.js",
     "prepublish": "nsp check",
-    "test": "tape test/contextify-test.js test/cpuprofile-processor-test.js | tap-spec",
-    "coverage": "istanbul cover tape test/contextify-test.js"
+    "test": "tape test/huilu-test.js test/contextify-test.js test/cpuprofile-processor-test.js | tap-spec",
+    "coverage": "istanbul cover tape test/contextify-test.js tape test/huilu-test.js tape test/cpuprofile-processor-test.js"
   },
+  "files": [
+    "index.js",
+    "README.md",
+    "from-stream.js",
+    "lib",
+    "LICENSE.txt",
+    "package.json"
+  ],
   "dependencies": {
     "concat-stream": "~1.4.6",
     "cpuprofilify": "^0.2.4",
@@ -17,23 +25,17 @@
     "xtend": "~4.0.0"
   },
   "devDependencies": {
-    "debounce": "^1.0.0",
     "eslint": "^3.5.0",
     "eslint-config-semistandard": "^7.0.0",
     "eslint-config-standard": "^6.0.0",
     "eslint-plugin-promise": "^2.0.1",
     "eslint-plugin-react": "^6.2.1",
     "eslint-plugin-standard": "^2.0.0",
-    "hbsfy": "~2.0.0",
+    "fidelity": "^4.1.0",
     "istanbul": "^0.4.5",
-    "nave": "~0.4.3",
     "nsp": "^2.6.1",
-    "resolve-jit-symbols": "~0.3.4",
-    "stream-array": "~1.0.1",
     "tap-spec": "^4.1.1",
-    "tape": "^4.6.0",
-    "uniwheel": "^0.1.2",
-    "watchify": "~2.1.1"
+    "tape": "^4.6.0"
   },
   "license": "Apache-2.0"
 }
