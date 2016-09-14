@@ -1,10 +1,12 @@
 {
   "name": "huilu",
-  "version": "0.7.0",
-  "description": "Generates flamegraphs with Node.js or in the browser",
+  "version": "0.0.1",
+  "description": "Generates flamegraphs with Node.js",
   "main": "index.js",
   "scripts": {
-    "prepublish": "nsp check"
+    "lint": "eslint test/*.js index.js from-stream.js lib/*.js",
+    "prepublish": "nsp check",
+    "coverage" : "istanbul cover tape test/cpugenet-test.js"
   },
   "dependencies": {
     "concat-stream": "~1.4.6",
@@ -15,7 +17,14 @@
   },
   "devDependencies": {
     "debounce": "^1.0.0",
+    "eslint": "^3.5.0",
+    "eslint-config-semistandard": "^7.0.0",
+    "eslint-config-standard": "^6.0.0",
+    "eslint-plugin-promise": "^2.0.1",
+    "eslint-plugin-react": "^6.2.1",
+    "eslint-plugin-standard": "^2.0.0",
     "hbsfy": "~2.0.0",
+    "istanbul": "^0.4.5",
     "nave": "~0.4.3",
     "nsp": "^2.6.1",
     "resolve-jit-symbols": "~0.3.4",
