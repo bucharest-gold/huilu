@@ -5,7 +5,7 @@ const processor = require('../lib/cpuprofile-processor');
 const fs = require('fs');
 const path = require('path');
 
-var profile = JSON.parse(fs.readFileSync(path.join(__dirname, '/fixtures/v8-profiler.cpuprofile', 'utf8')));
+let profile = JSON.parse(fs.readFileSync(path.join(__dirname, '/fixtures/v8-profiler.cpuprofile'), 'utf8'));
 
 // TODO: unused - remove this when things get more stable.
 // function inspect (obj, depth) {
@@ -13,7 +13,7 @@ var profile = JSON.parse(fs.readFileSync(path.join(__dirname, '/fixtures/v8-prof
 // }
 
 test('\ngiven an array of collapsed lines representing the call graph', function (t) {
-  var parsed = processor(profile).process();
+  let parsed = processor(profile).process();
 
   t.deepEqual(
     parsed
