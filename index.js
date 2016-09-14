@@ -8,7 +8,7 @@ const cpuprofileProcessor = require('./lib/cpuprofile-processor');
 
 function fromCpuProfile (cpuprofile, opts) {
   var processed = cpuprofileProcessor(cpuprofile, opts).process();
-  return svg(processed, opts);
+  return svg.svg(processed, opts);
 }
 
 exports = module.exports = {

@@ -7,7 +7,9 @@
 
 [![NPM](https://nodei.co/npm/huilu.png)](https://npmjs.org/package/huilu)
 
-N/A
+Generates flamegraphs with Node.js
+
+> Chinese mythology includes stories of Hui Lu, a magician and fire god who kept 100 firebirds in a gourd. By setting them loose, he could start a fire across the whole country.
 
 |                 | Project Info  |
 | --------------- | ------------- |
@@ -19,11 +21,16 @@ N/A
 
 ## Installation
 
-    N/A
+    npm install huilu -S
 
 ## Usage
 
-    N/A
+    const fs = require('fs');
+    const huilu = require('huilu');
+
+    const stream = fs.createReadStream('v8.cpuprofile');
+    const svg = fs.createWriteStream('graph.svg');
+    huilu.fromStream(stream, {inputtype: 'cpuprofile'}).pipe(svg);
 
 ## Contributing
 

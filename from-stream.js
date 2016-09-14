@@ -30,7 +30,7 @@ function fromStream (stream, opts) {
 
   function ondata (res) {
     try {
-      var svg = flamegraph(res.toString().split('\n'), opts);
+      var svg = flamegraph.flamegraph(res.toString().split('\n'), opts);
       out.write(svg);
     } catch (err) {
       out.emit('error', err);
