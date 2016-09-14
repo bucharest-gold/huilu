@@ -10,10 +10,8 @@ function createSvg () {
   let stream = fs.createReadStream(path.join(__dirname, '/fixtures/v8-profiler.cpuprofile'));
   const svg = fs.createWriteStream(path.join(__dirname, '/file.svg'));
   const promise = new Fidelity((resolve, reject) => {
-    huilu.fromStream(stream, {inputtype: 'cpuprofile'})
-      .pipe(svg)
-      .on('end', () => resolve(svg))
-      .on('error', (e) => reject(e));
+    resolve(huilu.fromStream(stream, {inputtype: 'cpuprofile'})
+      .pipe(svg));
   });
   return promise;
 }
