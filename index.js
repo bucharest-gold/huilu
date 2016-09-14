@@ -1,17 +1,19 @@
 'use strict';
 
-var svg                 = require('./lib/svg')
-  , defaultOpts         = require('./lib/default-opts')
-  , defaultOptsMeta     = require('./lib/default-opts-meta')
-  , cpuprofilify        = require('cpuprofilify')
-  , cpuprofileProcessor = require('./lib/cpuprofile-processor');
+const svg = require('./lib/svg');
+const defaultOpts = require('./lib/default-opts');
+const defaultOptsMeta = require('./lib/default-opts-meta');
+const cpuprofilify = require('cpuprofilify');
+const cpuprofileProcessor = require('./lib/cpuprofile-processor');
 
-function fromCpuProfile(cpuprofile, opts) {
+function fromCpuProfile (cpuprofile, opts) {
   var processed = cpuprofileProcessor(cpuprofile, opts).process();
   return svg(processed, opts);
 }
 
-exports = module.exports =
+exports = module.exports = {
+  flamegraph: flamegraph
+};
 
 /**
  * Converts an array of call graph lines into an svg document.
@@ -38,13 +40,13 @@ exports = module.exports =
  * @param {string} opts.nametype        what are the names in the data?   default: `'Function:'`
  * @return {string} svg                 the rendered svg
  */
-function flamegraph(arr, opts) {
+function flamegraph (arr, opts) {
   var profile;
   if (!Array.isArray(arr)) throw new TypeError('First arg needs to be an array of lines.');
 
   opts = opts || {};
   try {
-    profile = cpuprofilify().convert(arr, opts.profile) 
+    profile = cpuprofilify().convert(arr, opts.profile);
   } catch (err) {
     // not a valid input to cpuprofilify -- maybe it's an actual cpuprofile already?
     try {
@@ -59,7 +61,6 @@ function flamegraph(arr, opts) {
   return fromCpuProfile(profile, opts);
 }
 
-
-exports.svg             = svg;
-exports.defaultOpts     = defaultOpts;
+exports.svg = svg;
+exports.defaultOpts = defaultOpts;
 exports.defaultOptsMeta = defaultOptsMeta;
