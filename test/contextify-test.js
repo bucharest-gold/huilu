@@ -39,12 +39,7 @@ var parsed = {
   stime: 0 } },
   time: 13135 };
 
-// TODO: unused - remove when things get more stable.
-// function inspect (obj, depth) {
-//   console.error(require('util').inspect(obj, false, depth || 5, true));
-// }
-
-test('\ncontextifying parsed stack with default options', function (t) {
+test('contextifying parsed stack with default options', t => {
   let context = contextify.contextify(parsed, defaultOpts);
   // hack to work around the fact that `toLocaleString` works slightly different in the browser than in node
   // i.e. `toLocaleString(1602) is '1,602' in the browser and `1602` in node
