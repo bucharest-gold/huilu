@@ -8,7 +8,7 @@
     "prepublish": "nsp check",
     "test": "tape test/huilu-test.js test/contextify-test.js test/cpuprofile-processor-test.js | tap-spec",
     "coverage": "istanbul cover tape test/contextify-test.js tape test/huilu-test.js tape test/cpuprofile-processor-test.js",
-    "dependencyCheck": "szero . --ci=true"
+    "dependencyCheck": "szero . --ci"
   },
   "files": [
     "index.js",
