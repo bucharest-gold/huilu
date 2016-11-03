@@ -17,7 +17,7 @@ Generates flamegraphs with Node.js
 | Build:          | make |
 | Documentation:  | N/A |
 | Issue tracker:  | https://github.com/bucharest-gold/huilu/issues |
-| Engines:        | Node.js 4.x, 5.x, 6.x |
+| Engines:        | Node.js 4.x, 6.x, 7.x |
 
 ## Installation
 
