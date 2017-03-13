@@ -6,8 +6,8 @@
   "scripts": {
     "lint": "eslint test/*.js index.js from-stream.js lib/*.js",
     "prepublish": "nsp check",
-    "test": "tape test/huilu-test.js test/contextify-test.js test/cpuprofile-processor-test.js | tap-spec",
-    "coverage": "istanbul cover tape test/contextify-test.js tape test/huilu-test.js tape test/cpuprofile-processor-test.js",
+    "test": "nyc tape test/huilu-test.js test/contextify-test.js test/cpuprofile-processor-test.js | tap-spec",
+    "coverage": "nyc report --reporter=text-lcov > ./coverage/lcov.info",
     "dependencyCheck": "szero . --ci"
   },
   "files": [
@@ -33,8 +33,8 @@
     "eslint-plugin-react": "^6.5.0",
     "eslint-plugin-standard": "^2.0.1",
     "fidelity": "^4.2.0",
-    "istanbul": "^0.4.5",
     "nsp": "^2.6.2",
+    "nyc": "^10.1.2",
     "tap-spec": "^4.1.1",
     "tape": "^4.6.2"
   },

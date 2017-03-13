@@ -2,7 +2,6 @@ test: lint
 	npm test
 
 ci: test
-	npm run coverage
 	npm run dependencyCheck
 
 lint: node_modules
