@@ -24,23 +24,23 @@ const concatStream = require('concat-stream');
  * @param {Object} opts same as `flamegraph`
  * @return {ReadableStream} stream that emits the lines of generated svg
  */
-function fromStream (stream, opts) {
+const fromStream = (stream, opts) => {
   opts = opts || {};
   var out = through();
 
-  function ondata (res) {
+  const ondata = (res) => {
     try {
       var svg = flamegraph.flamegraph(res.toString().split('\n'), opts);
       out.write(svg);
     } catch (err) {
       out.emit('error', err);
     }
-  }
+  };
 
   // Once memory becomes an issue we need to make this truly streaming
   stream.pipe(concatStream(ondata));
   return out;
-}
+};
 
 module.exports = {
   fromStream: fromStream

@@ -17,20 +17,24 @@ Generates flamegraphs with Node.js
 | Build:          | make |
 | Documentation:  | N/A |
 | Issue tracker:  | https://github.com/bucharest-gold/huilu/issues |
-| Engines:        | Node.js 4.x, 6.x, 7.x |
+| Engines:        | Node.js 4.x, 6.x, 8.x |
 
 ## Installation
 
-    npm install huilu -S
+```
+npm install huilu -S
+```
 
 ## Usage
 
-    const fs = require('fs');
-    const huilu = require('huilu/from-stream');
+```js
+const fs = require('fs');
+const huilu = require('huilu/from-stream');
 
-    const stream = fs.createReadStream('v8.cpuprofile');
-    const svg = fs.createWriteStream('graph.svg');
-    huilu.fromStream(stream, {inputtype: 'cpuprofile'}).pipe(svg);
+const stream = fs.createReadStream('v8.cpuprofile');
+const svg = fs.createWriteStream('graph.svg');
+huilu.fromStream(stream, {inputtype: 'cpuprofile'}).pipe(svg);
+```
 
 ## Contributing
 
